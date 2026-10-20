@@ -15,7 +15,23 @@ function calculateTotalCosts(hourlyRate, hours) {
   return hourlyRate * hours;
 }
 
-const skillswapFunctions = { filterSkillsByCategory, calculateTotalCosts };
+function matchSkillsToUser(userNeeds, skills) {
+  if (!userNeeds || typeof userNeeds.category !== 'string') {
+    throw new TypeError('User needs must include a category.');
+  }
+  if (!Number.isFinite(userNeeds.maxPrice) || userNeeds.maxPrice < 0) {
+    throw new RangeError('Maximum price must be a finite, non-negative number.');
+  }
+  return skills.filter(
+    (skill) => skill.category === userNeeds.category && skill.price <= userNeeds.maxPrice
+  );
+}
+
+const skillswapFunctions = {
+  filterSkillsByCategory,
+  calculateTotalCosts,
+  matchSkillsToUser
+};
 
 if (typeof module !== "undefined" && module.exports) {
   module.exports = skillswapFunctions;
