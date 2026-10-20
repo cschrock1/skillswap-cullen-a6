@@ -170,6 +170,16 @@ a {
     font: inherit;
 }
 
+.form-field select {
+    min-height: 2.6rem;
+    padding: 0.5rem 0.65rem;
+    border: 1px solid #aebdb5;
+    border-radius: 0.4rem;
+    background: #fff;
+    color: inherit;
+    font: inherit;
+}
+
 .calculator-submit {
     min-height: 2.6rem;
     padding: 0.5rem 0.8rem;
@@ -185,6 +195,10 @@ a {
 .calculator-submit:hover,
 .calculator-submit:focus-visible {
     background: #10533e;
+}
+
+#skill-match-results {
+    line-height: 1.8;
 }
 
 .skill-grid {
