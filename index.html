@@ -39,7 +39,7 @@
             </div>
             <p id="skill-count" aria-live="polite">5 skills found.</p>
             <div class="skill-grid">
-                <article class="skill-card" data-category="Music">
+                <article class="skill-card" data-category="Music" data-price="20">
                     <h3>Beginner Guitar</h3>
                     <p>Learn basic chords, strumming, and how to play your first songs.</p>
                     <p class="skill-provider">Offered by Jordan Lee</p>
@@ -47,7 +47,7 @@
                     <button class="skill-toggle" type="button" aria-expanded="false" aria-controls="guitar-details">More about this skill</button>
                     <p class="skill-details" id="guitar-details" hidden>One-on-one, 45-minute lessons for beginners. Bring your own guitar.</p>
                 </article>
-                <article class="skill-card" data-category="Other">
+                <article class="skill-card" data-category="Other" data-price="15">
                     <h3>Conversational Spanish</h3>
                     <p>Build confidence speaking Spanish through relaxed conversation practice.</p>
                     <p class="skill-provider">Offered by Sofia Martinez</p>
@@ -55,7 +55,7 @@
                     <button class="skill-toggle" type="button" aria-expanded="false" aria-controls="spanish-details">More about this skill</button>
                     <p class="skill-details" id="spanish-details" hidden>Practice at your pace with topics tailored to your interests and experience.</p>
                 </article>
-                <article class="skill-card" data-category="Programming">
+                <article class="skill-card" data-category="Programming" data-price="25">
                     <h3>Introduction to Coding</h3>
                     <p>Get started with HTML and CSS by building a simple web page.</p>
                     <p class="skill-provider">Offered by Alex Chen</p>
@@ -63,7 +63,7 @@
                     <button class="skill-toggle" type="button" aria-expanded="false" aria-controls="coding-details">More about this skill</button>
                     <p class="skill-details" id="coding-details" hidden>Bring a laptop for a hands-on introduction to the building blocks of the web.</p>
                 </article>
-                <article class="skill-card" data-category="Other">
+                <article class="skill-card" data-category="Other" data-price="18">
                     <h3>Watercolor Basics</h3>
                     <p>Practice color mixing and simple watercolor techniques.</p>
                     <p class="skill-provider">Offered by Morgan Rivera</p>
@@ -71,7 +71,7 @@
                     <button class="skill-toggle" type="button" aria-expanded="false" aria-controls="watercolor-details">More about this skill</button>
                     <p class="skill-details" id="watercolor-details" hidden>A beginner-friendly session covering materials, washes, and a small painting.</p>
                 </article>
-                <article class="skill-card" data-category="Career">
+                <article class="skill-card" data-category="Career" data-price="0">
                     <h3>Resume Review</h3>
                     <p>Get practical feedback to make your resume clearer and more effective.</p>
                     <p class="skill-provider">Offered by Taylor Morgan</p>
@@ -97,6 +97,28 @@
                 <button class="calculator-submit" type="submit">Calculate total</button>
             </form>
             <p id="cost-calculator-result" aria-live="polite">Enter a rate and hours to calculate your total.</p>
+        </section>
+
+        <section class="content-section" id="skill-matcher" aria-labelledby="skill-matcher-heading">
+            <h2 id="skill-matcher-heading">Find My Match</h2>
+            <p>Choose a category and maximum price to find a skill that fits your needs.</p>
+            <form id="skill-matcher-form" class="calculator-form">
+                <div class="form-field">
+                    <label for="match-category">Category preference</label>
+                    <select id="match-category" required>
+                        <option value="" selected disabled>Select a category</option>
+                        <option value="Programming">Programming</option>
+                        <option value="Music">Music</option>
+                        <option value="Career">Career</option>
+                    </select>
+                </div>
+                <div class="form-field">
+                    <label for="match-max-price">Maximum price ($)</label>
+                    <input id="match-max-price" type="number" min="0" step="0.01" value="30" required>
+                </div>
+                <button class="calculator-submit" type="submit">Find My Match</button>
+            </form>
+            <ul id="skill-match-results" aria-live="polite"></ul>
         </section>
 
         <section class="content-section" id="offer-skills" aria-labelledby="offer-skills-heading">

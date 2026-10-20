@@ -49,3 +49,32 @@ document.getElementById("cost-calculator-form").addEventListener("submit", (even
     document.getElementById("cost-calculator-result").textContent =
         `Total cost: $${total.toFixed(2)}`;
 });
+
+document.getElementById("skill-matcher-form").addEventListener("submit", (event) => {
+    event.preventDefault();
+    const userNeeds = {
+        category: document.getElementById("match-category").value,
+        maxPrice: document.getElementById("match-max-price").valueAsNumber
+    };
+    const offerings = skillCards.map((card) => ({
+        title: card.querySelector("h3").textContent.trim(),
+        category: card.dataset.category,
+        price: Number(card.dataset.price)
+    }));
+    const matches = window.SkillSwapFunctions.matchSkillsToUser(userNeeds, offerings);
+    const results = document.getElementById("skill-match-results");
+    results.replaceChildren();
+
+    if (matches.length === 0) {
+        const emptyResult = document.createElement("li");
+        emptyResult.textContent = "No skills match that category and budget. Try a higher maximum price.";
+        results.append(emptyResult);
+        return;
+    }
+
+    matches.forEach((skill) => {
+        const result = document.createElement("li");
+        result.textContent = `${skill.title} — ${skill.price === 0 ? "Free" : `$${skill.price}`} per session`;
+        results.append(result);
+    });
+});
