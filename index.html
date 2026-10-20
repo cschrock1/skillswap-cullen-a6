@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <script src="skillswap-functions.js" defer></script>
     <script src="script.js" defer></script>
     <title>Skill Swap</title>
 </head>
@@ -30,8 +31,15 @@
         <section class="content-section" id="browse-skills" aria-labelledby="offerings-heading">
             <h2 id="offerings-heading">Skill offerings</h2>
             <p class="section-intro">Explore skills shared by the Skill Swap community.</p>
+            <div class="category-filters" role="group" aria-label="Filter skills by category">
+                <button class="category-filter is-active" type="button" data-category="All" aria-pressed="true">All</button>
+                <button class="category-filter" type="button" data-category="Programming" aria-pressed="false">Programming</button>
+                <button class="category-filter" type="button" data-category="Music" aria-pressed="false">Music</button>
+                <button class="category-filter" type="button" data-category="Career" aria-pressed="false">Career</button>
+            </div>
+            <p id="skill-count" aria-live="polite">5 skills found.</p>
             <div class="skill-grid">
-                <article class="skill-card">
+                <article class="skill-card" data-category="Music">
                     <h3>Beginner Guitar</h3>
                     <p>Learn basic chords, strumming, and how to play your first songs.</p>
                     <p class="skill-provider">Offered by Jordan Lee</p>
@@ -39,7 +47,7 @@
                     <button class="skill-toggle" type="button" aria-expanded="false" aria-controls="guitar-details">More about this skill</button>
                     <p class="skill-details" id="guitar-details" hidden>One-on-one, 45-minute lessons for beginners. Bring your own guitar.</p>
                 </article>
-                <article class="skill-card">
+                <article class="skill-card" data-category="Other">
                     <h3>Conversational Spanish</h3>
                     <p>Build confidence speaking Spanish through relaxed conversation practice.</p>
                     <p class="skill-provider">Offered by Sofia Martinez</p>
@@ -47,7 +55,7 @@
                     <button class="skill-toggle" type="button" aria-expanded="false" aria-controls="spanish-details">More about this skill</button>
                     <p class="skill-details" id="spanish-details" hidden>Practice at your pace with topics tailored to your interests and experience.</p>
                 </article>
-                <article class="skill-card">
+                <article class="skill-card" data-category="Programming">
                     <h3>Introduction to Coding</h3>
                     <p>Get started with HTML and CSS by building a simple web page.</p>
                     <p class="skill-provider">Offered by Alex Chen</p>
@@ -55,13 +63,21 @@
                     <button class="skill-toggle" type="button" aria-expanded="false" aria-controls="coding-details">More about this skill</button>
                     <p class="skill-details" id="coding-details" hidden>Bring a laptop for a hands-on introduction to the building blocks of the web.</p>
                 </article>
-                <article class="skill-card">
+                <article class="skill-card" data-category="Other">
                     <h3>Watercolor Basics</h3>
                     <p>Practice color mixing and simple watercolor techniques.</p>
                     <p class="skill-provider">Offered by Morgan Rivera</p>
                     <p class="skill-price">$18 per session</p>
                     <button class="skill-toggle" type="button" aria-expanded="false" aria-controls="watercolor-details">More about this skill</button>
                     <p class="skill-details" id="watercolor-details" hidden>A beginner-friendly session covering materials, washes, and a small painting.</p>
+                </article>
+                <article class="skill-card" data-category="Career">
+                    <h3>Resume Review</h3>
+                    <p>Get practical feedback to make your resume clearer and more effective.</p>
+                    <p class="skill-provider">Offered by Taylor Morgan</p>
+                    <p class="skill-price">Free session</p>
+                    <button class="skill-toggle" type="button" aria-expanded="false" aria-controls="resume-details">More about this skill</button>
+                    <p class="skill-details" id="resume-details" hidden>Bring a current resume draft and leave with focused suggestions for your next revision.</p>
                 </article>
             </div>
         </section>

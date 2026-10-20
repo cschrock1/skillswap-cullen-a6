@@ -113,6 +113,36 @@ a {
     margin-bottom: 1.5rem;
 }
 
+.category-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    margin-bottom: 0.75rem;
+}
+
+.category-filter {
+    padding: 0.55rem 0.85rem;
+    border: 1px solid #176b52;
+    border-radius: 999px;
+    background: #fff;
+    color: #176b52;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.category-filter:hover,
+.category-filter:focus-visible,
+.category-filter.is-active {
+    background: #176b52;
+    color: #fff;
+}
+
+#skill-count {
+    margin: 0 0 1rem;
+    color: #53635e;
+}
+
 .skill-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr));
@@ -145,6 +175,10 @@ a {
 
 .skill-card p {
     margin-bottom: 0;
+}
+
+.skill-card[hidden] {
+    display: none;
 }
 
 .skill-provider {
