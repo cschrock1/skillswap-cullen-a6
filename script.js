@@ -40,3 +40,12 @@ document.querySelectorAll(".skill-toggle").forEach((button) => {
         details.hidden = isExpanded;
     });
 });
+
+document.getElementById("cost-calculator-form").addEventListener("submit", (event) => {
+    event.preventDefault();
+    const hourlyRate = document.getElementById("hourly-rate").valueAsNumber;
+    const hours = document.getElementById("lesson-hours").valueAsNumber;
+    const total = window.SkillSwapFunctions.calculateTotalCosts(hourlyRate, hours);
+    document.getElementById("cost-calculator-result").textContent =
+        `Total cost: $${total.toFixed(2)}`;
+});

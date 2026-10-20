@@ -82,6 +82,23 @@
             </div>
         </section>
 
+        <section class="content-section" id="cost-calculator" aria-labelledby="cost-calculator-heading">
+            <h2 id="cost-calculator-heading">Calculate lesson cost</h2>
+            <p>Enter an hourly rate and the number of hours to estimate the total.</p>
+            <form id="cost-calculator-form" class="calculator-form">
+                <div class="form-field">
+                    <label for="hourly-rate">Hourly rate ($)</label>
+                    <input id="hourly-rate" type="number" min="0" step="0.01" required>
+                </div>
+                <div class="form-field">
+                    <label for="lesson-hours">Hours</label>
+                    <input id="lesson-hours" type="number" min="0" step="any" required>
+                </div>
+                <button class="calculator-submit" type="submit">Calculate total</button>
+            </form>
+            <p id="cost-calculator-result" aria-live="polite">Enter a rate and hours to calculate your total.</p>
+        </section>
+
         <section class="content-section" id="offer-skills" aria-labelledby="offer-skills-heading">
             <h2 id="offer-skills-heading">Offer a skill</h2>
             <p>Information about sharing your skills will appear here soon.</p>
